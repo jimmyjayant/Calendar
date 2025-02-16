@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en-IN">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="author" content="Jimmy Jayant">
+        <meta name="keywords" content="calendar, html5, css3, vanilla js">
+        <meta name="description" content="This is a Calendar website.">
+        <title>
+            Calendar 
+        </title>
+        <link rel="icon" href="favicon.ico">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+
+        <header>
+            <img src="logo.png" alt="Calendar Website Logo">
+            <h1>
+                Calendar 
+            </h1>
+        </header>
+
+        <div class="calendar">
+
+            <div class="sidebar">
+                <div class="year">
+                    <div class="previousyear">
+                        <button type="button" onclick="previousyear()">&lt;</button>
+                    </div>
+                    <div id="currentyear"></div>
+                    <div class="nextyear">
+                        <button type="button" onclick="nextyear()">&gt;</button>
+                    </div>
+                </div>
+
+                <div class="monthlist">
+                    <a href="#" onclick="jan()">January</a>
+                    <a href="#" onclick="feb()">February</a>
+                    <a href="#" onclick="mar()">March</a>
+                    <a href="#" onclick="apr()">April</a>
+                    <a href="#" onclick="may()">May</a>
+                    <a href="#" onclick="jun()">June</a>
+                    <a href="#" onclick="jul()">July</a>
+                    <a href="#" onclick="aug()">August</a>
+                    <a href="#" onclick="sep()">September</a>
+                    <a href="#" onclick="oct()">October</a>
+                    <a href="#" onclick="nov()">November</a>
+                    <a href="#" onclick="dec()">December</a>
+                </div>
+            </div>
+
+            <div class="main-calendar">
+                <h2 id="monthandyear"></h2>
+
+                <table>
+                    <tr>
+                        <th>Su</th>
+                        <th>Mo</th>
+                        <th>Tu</th>
+                        <th>We</th>
+                        <th>Th</th>
+                        <th>Fr</th>
+                        <th>Sa</th>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="events">
+                <h2>
+                    Main Events 
+                </h2>
+
+                <div class="eventdescription">
+                    <p>
+                        The events are as follows:- 
+                    </p>
+
+                    <ul id="eventlist">
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <script src="script.js"></script>
+        <noscript>
+            This web browser does not support JavaScript. 
+        </noscript>
+    </body>
+</html>
