@@ -91,3 +91,8 @@ table {
     text-align:center;
 }
 
+@media screen and (max-width:600px) {
+    .year {
+        flex-direction:column;
+    }
+}
