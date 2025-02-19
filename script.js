@@ -101,6 +101,15 @@ function displaydates(exp, inputmonth, inputyear) {
                     break;
             }
 
+            if((inputmonth == month) && (inputyear == year) && (date == today))
+            {
+                displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.border = "2px solid black";
+            }
+            else
+            {
+                displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.border = "";
+            }
+
             displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].innerHTML = date;
         }
     }
@@ -312,3 +321,18 @@ function dec() {
     let inputmonth = 11;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
 }
+
+function menu() {
+    let sidebar = document.getElementsByClassName("sidebar")[0];
+    sidebar.style.width = "calc(50%)";
+    if(sidebar.style.display == "block")
+    sidebar.style.display = "none";
+    else
+    sidebar.style.display = "block";
+}
+
+window.addEventListener("resize", () => {
+    let sidebar = document.getElementsByClassName("sidebar")[0];
+    sidebar.style.width = "";
+    sidebar.style.display = "";
+});
