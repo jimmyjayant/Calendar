@@ -9,12 +9,18 @@ html {
 }
 
 body {
+    display:flex;
+    flex-direction:column;
     max-height:100vh;
     max-height:100dvh;
     max-height:100svh;
     height:100%;
     margin:0;
     padding:0;
+}
+
+::-webkit-scrollbar {
+    width:5px;
 }
 
 header {
@@ -28,6 +34,11 @@ header {
 
 .hamburgermenu {
     display:none;
+    cursor:pointer;
+}
+
+.hamburgermenu:active > div {
+    border:3px solid rgb(60, 59, 59);
 }
 
 .hamburgermenu div {
@@ -57,9 +68,14 @@ header div:last-child {
 }
 
 .calendar {
+    flex:1;
     display:flex;
     margin:0;
     padding:0;
+}
+
+.calendar > div:last-child {
+    padding:1rem;
 }
 
 .sidebar {
@@ -67,9 +83,14 @@ header div:last-child {
     margin:0;
     text-align:center;
     flex-grow:1;
-    position:absolute;
-    overflow-y:auto;
+    overflow-y:scroll;
     overflow-x:hidden;
+    height:100%;
+    min-width:max-content;
+}
+
+.sidebar::-webkit-scrollbar {
+    width:1px;
 }
 
 .year {
@@ -101,9 +122,8 @@ header div:last-child {
     text-align:center;
 }
 
-.events {
-    flex-grow:2;
-    text-align:center;
+#monthandyear {
+    font-size:1.5rem;
 }
 
 table {
@@ -118,14 +138,70 @@ table tr {
 }
 
 table td, table th {
-    width:1rem;
-    height:1rem;
-    padding:1rem;
+    padding:clamp(0.5rem, 0.8rem + 1vw, 1.5rem);
     margin:5px;
+    background-color:transparent;
+    border:none;
 }
 
-table td:hover {
+table td:not(:empty):hover {
     border:2px solid grey;
+}
+
+.events {
+    flex-grow:2;
+    text-align:center;
+    position:relative;
+}
+
+.events span {
+    display:none;
+    position:absolute;
+    right:1rem;
+    padding:0.5rem;
+    cursor:pointer;
+    background:lightgrey;
+}
+
+.events span:hover {
+    color:red;
+}
+
+#nolocalstorage {
+    display:none;
+    color:red;
+}
+
+.eventdescription p:nth-child(2) {
+    display:none;
+}
+
+#noevent {
+    display:none;
+}
+
+.hide {
+    display:none;
+}
+
+.show {
+    display:block;
+}
+
+#eventlist {
+    list-style-type:none;
+}
+
+#enterevents {
+    display:block;
+    width:70%;
+    max-width:800px;
+    aspect-ratio:3/2;
+    margin:1rem auto;
+}
+
+#entereventdescription {
+    display:none;
 }
 
 @media screen and (max-width:800px) {
@@ -133,11 +209,48 @@ table td:hover {
         display:block;
     }
 
+    .calendar {
+        flex-direction:column;
+    }
+
+    .sidebar {
+        padding-bottom:5rem;
+    }
+
+    #displaydates tbody {
+        display:grid;
+        grid-template-columns:auto;
+        grid-template-rows:repeat(7, 1fr);
+        gap:5px;
+        width:100%;
+    }
+
+    tbody tr {
+        display:grid;
+        grid-template-rows:auto;
+        grid-template-columns:repeat(7, 1fr);
+        gap:5px;
+    }
+
+    table td, table th {
+        padding:0;
+        margin:0;
+    }
+
+    table {
+        width:100%;
+    }
+
     .events {
         display:none;
     }
 
+    .events span {
+        display:block;
+    }
+
     .sidebar {
         display:none;
+        position:absolute;
     }
 }

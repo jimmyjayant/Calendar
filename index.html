@@ -128,11 +128,17 @@
             </div>
 
             <div class="events">
+
+                <span onclick="hideevents()">X</span>
                 <h2>
                     Main Events 
                 </h2>
 
                 <div class="eventdescription">
+                    <p>
+                        Select a date to show associated events. 
+                    </p>
+
                     <p>
                         The events are as follows:- 
                     </p>
@@ -140,9 +146,28 @@
                     <ul id="eventlist">
 
                     </ul>
+
+                    <p id="noevent">
+                        The selected date has no associated events. You can set one if you want. 
+                    </p>
+
+                    <p id="nolocalstorage">
+                        The web browser does not support Local Storage. So you cannot add or read events associated with the dates. 
+                    </p>
+
+                    <button type="button" onclick="addevent()">Add an Event</button>
+
+                    <div id="entereventdescription">
+                        <textarea id="enterevents"></textarea>
+
+                        <button type="button" onclick="add()">Add</button>
+
+                        <button type="button" onclick="reset()">Reset</button>
+                        
+                        <button type="button" onclick="cancel()">Cancel</button>
+                    </div>                    
                 </div>
             </div>
-
         </div>
 
         <script src="script.js"></script>
