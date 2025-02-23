@@ -277,6 +277,7 @@ function jan() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 0;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function feb() {
@@ -285,6 +286,7 @@ function feb() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 1;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function mar() {
@@ -293,6 +295,7 @@ function mar() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 2;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function apr() {
@@ -301,6 +304,7 @@ function apr() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 3;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function may() {
@@ -309,6 +313,7 @@ function may() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 4;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function jun() {
@@ -317,6 +322,7 @@ function jun() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 5;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function jul() {
@@ -325,6 +331,7 @@ function jul() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 6;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function aug() {
@@ -333,6 +340,7 @@ function aug() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 7;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function sep() {
@@ -341,6 +349,7 @@ function sep() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 8;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function oct() {
@@ -349,6 +358,7 @@ function oct() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 9;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function nov() {
@@ -357,6 +367,7 @@ function nov() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 10;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function dec() {
@@ -365,6 +376,7 @@ function dec() {
     let inputyear = Number(currentyear.innerText);
     let inputmonth = 11;
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
+    eventsdiv.style.display = "none";
 }
 
 function menu() {
