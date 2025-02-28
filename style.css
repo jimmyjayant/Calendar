@@ -154,7 +154,7 @@ table td:not(:empty):hover {
     position:relative;
 }
 
-.events span {
+.events > span {
     display:none;
     position:absolute;
     right:1rem;
@@ -163,8 +163,12 @@ table td:not(:empty):hover {
     background:lightgrey;
 }
 
-.events span:hover {
+.events > span:hover {
     color:red;
+}
+
+#selecteddate {
+    display:none;
 }
 
 #nolocalstorage {
@@ -172,7 +176,7 @@ table td:not(:empty):hover {
     color:red;
 }
 
-.eventdescription p:nth-child(2) {
+.eventdescription p:nth-child(3) {
     display:none;
 }
 
@@ -247,7 +251,7 @@ table td:not(:empty):hover {
         display:none;
     }
 
-    .events span {
+    .events > span {
         display:block;
     }
 

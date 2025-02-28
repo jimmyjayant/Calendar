@@ -14,7 +14,7 @@ var eventsdiv = document.querySelector(".events");
 
 var entereventdescriptiondiv = document.getElementById("entereventdescription");
 
-var eventdescriptiondiv_second_p = document.querySelector(".eventdescription p:nth-child(2)");
+var eventdescriptiondiv_second_p = document.querySelector(".eventdescription p:nth-child(3)");
 
 var enterevents = document.getElementById("enterevents");
 
@@ -25,6 +25,10 @@ var eventlist = document.getElementById("eventlist");
 var noevent = document.getElementById("noevent");
 
 var sidebar = document.querySelector(".sidebar");
+
+var selecteddate = document.getElementById("selecteddate");
+
+var clickeddate = selecteddate.querySelector("span");
 
 switch(new Date().getMonth())
 {
@@ -466,6 +470,17 @@ td.forEach((td) => {
         eventdate = event.target.innerText + " " + curmonthyear.innerText;
         entereventdescriptiondiv.style.display = "none";
         eventsdiv.style.display = "";
+        
+        if(td.innerHTML != "")
+        {
+            selecteddate.style.display = "block";
+            clickeddate.innerHTML = eventdate;
+        }
+        else
+        {
+            selecteddate.style.display = "";
+        }
+
         if(lastClicked)
         {
             if((lastClicked.innerText == today) && 
@@ -476,12 +491,15 @@ td.forEach((td) => {
             }
             else
             {
-                lastClicked.style.border = "none";
+                lastClicked.style.border = "";
             }
         }
 
-        td.style.border = "2px solid blue";
-
+        if(td.innerHTML != "")
+        {
+            td.style.border = "2px solid blue";
+        }
+        
         lastClicked = td;
         showevent(eventdate);
     });
