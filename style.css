@@ -213,6 +213,10 @@ table td:not(:empty):hover {
         display:block;
     }
 
+    header img {
+        display:none;
+    }
+
     .calendar {
         flex-direction:column;
     }

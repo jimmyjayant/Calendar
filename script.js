@@ -83,70 +83,28 @@ switch(new Date().getMonth())
 
 function displaydates(exp, inputmonth, inputyear) {
     var firstday = new Date(`${exp}`).getDay();
-    var displaydatetable = document.getElementById("displaydates").childNodes[1];
-    var col;
-/*
-    var row = (today / 7);
-    var remainder = (today % 7);
-    if(remainder == 0)
-    {
-        row = row;
-    }
-    else
-    {
-        row = Math.ceil(row);
-    }
-*/
-    switch(firstday)
-    {
-        case 0:
-        col = 1;
-        break;
-
-        case 1:
-        col = 3;
-        break;
-
-        case 2:
-        col = 5;
-        break;
-
-        case 3:
-        col = 7;
-        break;
-
-        case 4:
-        col = 9;
-        break;
-
-        case 5:
-        col = 11;
-        break;
-
-        case 6:
-        col = 13;
-        break;
-    }
+    var displaydatetable = document.getElementById("displaydates").children[0];
 
     // Loop for clearing the table's data cell for displaying dates. So that when the user clicks on one month and then on another, the dates from previous month does not remain present in the current month. 
+    // variable i in the below for loop will start from 1 to 6 since i = 0 is the Su - Sa row.
     for(let i = 1; i <= 6; i++)
     {
-        for(let j = 1; j <= 13; j += 2)
+        for(let j = 0; j <= 6; j++)
         {
-            displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].innerHTML = "";
-            displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.backgroundColor = "";
+            displaydatetable.children[`${i}`].children[`${j}`].innerHTML = "";
+            displaydatetable.children[`${i}`].children[`${j}`].style.backgroundColor = "";
         }
     }
 
     for(let i = 1, counter = 1, date = 1; i <= 6; i++, counter++)
     {
-        let j = 1;
+        let j = 0;
         if(counter == 1)
         {
-            j = col;
+            j = firstday;
         }
 
-        for(; date <= 31, j <= 13; j += 2, date++)
+        for(; date <= 31, j <= 6; j++, date++)
         {
             // For February Month, when the year is leap year, the last date is 29 else 28
             if(inputmonth == 1)
@@ -179,14 +137,14 @@ function displaydates(exp, inputmonth, inputyear) {
 
             if((inputmonth == month) && (inputyear == year) && (date == today))
             {
-                displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.border = "2px solid black";               
+                displaydatetable.children[`${i}`].children[`${j}`].style.border = "2px solid black";             
             }
             else
             {
-                displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.border = "";
+                displaydatetable.children[`${i}`].children[`${j}`].style.border = "";
             }
 
-            displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].innerHTML = date;
+            displaydatetable.children[`${i}`].children[`${j}`].innerHTML = date;
 
             if(typeof(Storage) != "undefined")
             {
@@ -197,72 +155,11 @@ function displaydates(exp, inputmonth, inputyear) {
 
                 if(currentdayevent.length != 0)
                 {
-                    displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].style.backgroundColor = "lightgreen";
+                    displaydatetable.children[`${i}`].children[`${j}`].style.backgroundColor = "lightgreen";
                 }
             }
         }
     }
-/*
-    let date = today;
-
-    for(let i = row, counter = 1; i <= 5; i++, counter++)
-    {
-        let j = 1;
-
-        if(counter == 1)
-        {
-            j = col;
-        }
-        //console.log(i);
-        //console.log(j);
-        //console.log(counter);
-
-        for(; date <= 31, j <= 13; j += 2, date++)
-        {
-            if(month == 1)
-            {
-                if((new Date().getFullYear() % 4) == 0)
-                {
-                    if(date == 30)
-                    break;
-                }
-                else
-                {
-                    if(date == 29)
-                    break;
-                }
-            }
-
-            if((month == 3) || (month == 5) || (month == 8) || (month == 10))
-            {
-                if(date == 31)
-                    break;
-            }
-            
-            displaydatetable.childNodes[`${2*i}`].childNodes[`${j}`].innerHTML = date;
-        }
-    }
-
-    date = today-1;
-
-    for(let x = row, counter = 1; x > 0; x--, counter++)
-    {
-        let m = 13;
-
-        if(counter == 1)
-        {
-            m = col-2;
-        }
-        console.log(x);
-        console.log(m);
-        console.log(counter);
-
-        for(; date >= 1, m>=1; m -= 2, --date)
-        {
-            displaydatetable.childNodes[`${2*x}`].childNodes[`${m}`].innerHTML = date;
-        }
-    }
-*/
 }
 
 displaydates(defaultexpression, month, year);
@@ -402,13 +299,11 @@ window.addEventListener("resize", () => {
     sidebar.style.display = "";
 });
 
-
 function addevent() {
     if(typeof(Storage) != undefined)
     {
         entereventdescriptiondiv.style.display = "block";
     }
-    
     else
     {
         nolocalstorage.style.display = "block";
@@ -458,8 +353,6 @@ function showevent(eventdate) {
         nolocalstorage.style.display = "block";
     }
 }
-
-//showevent(`${today} ${curmonthyear.innerText}`);
 
 const td = Array.from(document.querySelectorAll("td"));
 
