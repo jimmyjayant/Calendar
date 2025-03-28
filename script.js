@@ -93,6 +93,7 @@ function displaydates(exp, inputmonth, inputyear) {
         {
             displaydatetable.children[`${i}`].children[`${j}`].innerHTML = "";
             displaydatetable.children[`${i}`].children[`${j}`].style.backgroundColor = "";
+            displaydatetable.children[`${i}`].children[`${j}`].style.border = "";
         }
     }
 
@@ -279,25 +280,6 @@ function dec() {
     displaydates(`${inputyear}-${inputmonth + 1}-01`, inputmonth, inputyear);
     eventsdiv.style.display = "none";
 }
-
-function menu() {
-    if(sidebar.style.display == "block")
-    {
-        sidebar.style.display = "none";
-        sidebar.style.width = "";
-    }
-    else
-    {
-        sidebar.style.display = "block";
-        sidebar.style.width = "calc(50%)";
-    }
-}
-
-window.addEventListener("resize", () => {
-    let sidebar = document.getElementsByClassName("sidebar")[0];
-    sidebar.style.width = "";
-    sidebar.style.display = "";
-});
 
 function addevent() {
     if(typeof(Storage) != undefined)

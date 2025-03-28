@@ -15,11 +15,11 @@
     <body>
 
         <header>
-            <div class="hamburgermenu" onclick="menu()">
+            <a class="hamburgermenu" href="#navbar">
                 <div></div>
                 <div></div>
                 <div></div>
-            </div>
+            </a>
             <div>
                 <img src="logo.png" alt="Calendar Website Logo">
                 <h1>
@@ -30,7 +30,8 @@
 
         <div class="calendar">
 
-            <div class="sidebar">
+            <div class="sidebar" id="navbar">
+                <a class="closenav" href="#"><span>&times;</span></a>
                 <div class="year">
                     <div class="previousyear">
                         <button type="button" onclick="previousyear()">&lt;</button>
@@ -129,7 +130,7 @@
 
             <div class="events">
 
-                <span onclick="hideevents()">X</span>
+                <span onclick="hideevents()">&times;</span>
                 <h2>
                     Main Events 
                 </h2>
